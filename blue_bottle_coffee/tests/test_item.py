@@ -45,7 +45,6 @@ class TestItemModel:
         assert str(item) == ITEM_SKU
 
 
-
 class TestItemDetailModel:
 
     def test_fields(self, item, item_detail):
