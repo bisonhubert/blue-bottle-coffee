@@ -31,12 +31,20 @@ ALLOWED_HOSTS = ['localhost']
 # Application definition
 
 INSTALLED_APPS = [
+    # Django modules
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Local apps
+    'blue_bottle_coffee.cafe',
+    'blue_bottle_coffee.item',
+
+    # External apps
+    'djmoney',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +132,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+USE_L10N = True
