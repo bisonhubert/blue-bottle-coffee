@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # Local apps
     'blue_bottle_coffee.cafe',
     'blue_bottle_coffee.item',
+    'blue_bottle_coffee.api_client',
 
     # External apps
     'djmoney',

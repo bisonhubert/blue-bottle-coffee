@@ -17,3 +17,11 @@ ITEM_SKU = "BV-CAP"
 ITEM_NAME = "Cappuccino"
 ITEM_PRICE = "3.75"
 ITEM_CURRENCY = "USD"
+
+# Client Types
+CAFE = 'cafes'
+CATEGORY = 'item_categories'
+ITEM = 'items'
+ITEM_DETAILS = 'item_details'
+LANGUAGE_CODE_US = 'en-US'
+LANGUAGE_CODE_JP = 'ja-JP'
