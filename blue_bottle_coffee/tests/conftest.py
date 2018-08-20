@@ -3,6 +3,7 @@ import pytest
 from . import *
 
 from ..api_client.clients import Client, CountryClient
+from ..api_client.factories import CategoryFactory, ItemFactory
 from ..cafe.models import Cafe
 from ..item.models import Category, Item, ItemDetail
 
@@ -70,3 +71,30 @@ def item_detail_en_client():
 @pytest.fixture
 def item_detail_jp_client():
     return CountryClient(model=ITEM_DETAILS, language_code=LANGUAGE_CODE_JP)
+
+@pytest.fixture
+def data_importer():
+    class DummyImportHelper(object):
+        def run_import(self, import_data):
+            import_data()
+
+        def attempt_save(self, instance):
+            try:
+                instance.save()
+            except:
+                raise
+            return instance
+
+    return DummyImportHelper()
+
+
+@pytest.fixture
+def category_factory(data_importer):    
+    return CategoryFactory(content=MOCK_CATEGORY_CONTENT,
+        importer=data_importer)
+
+
+@pytest.fixture
+def item_factory(data_importer):
+    return ItemFactory(content=MOCK_ITEM_CONTENT,
+        importer=data_importer)

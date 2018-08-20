@@ -1,9 +1,7 @@
 import json
 import requests
 
-BASE_URL = 'https://raw.githubusercontent.com/bluebottlecoffee/coding_exercise/master/ims/'
-LANGUAGE_CODE_JPN = 'ja-JP'
-LANGUAGE_CODE_US = 'en-US'
+from ..constants import BASE_URL, LANGUAGE_CODE_JPN, LANGUAGE_CODE_US
 
 class Client(object):
 
@@ -25,8 +23,7 @@ class Client(object):
         response = self.get_response()
         if response:
             return json.loads(self.get_response().content)
-        return None # TODO (Bison): return customer exception    
-        
+        return None # TODO (Bison): return customer exception
 
 
 class CountryClient(Client):
