@@ -13,6 +13,7 @@ class TestApiClient:
         (pytest.lazy_fixture('item_detail_en_client')),
         (pytest.lazy_fixture('item_detail_jp_client')),
     ])
+    @patch('blue_bottle_coffee.api_client.clients.requests.get')
     def test_endpoints_200(self, mock_get, client):
         mock_get.return_value.ok = True
         response = client.get_response()

@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'blue_bottle_coffee.api_client',
 
     # External apps
+    'django_extensions',
     'djmoney',
 ]
 
